@@ -16,7 +16,7 @@ with DAG('dag_id_first', schedule_interval='@daily',
          catchup=False) as dag:
     creating_table = PostgresOperator(
         task_id="creating_table",
-        sqlite_conn_id="postgres_default",
+        postgres_conn_id="postgres_default",
         sql='''
         CREATE TABLE users(
             firstname TEXT NOT NULL,
